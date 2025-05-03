@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guardian – Safety Redefined</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="landing.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">🛡️ Guardian</div>
+    <div class="nav-right">
+      <label class="toggle-switch">
+        <input type="checkbox" id="themeToggle" />
+        <span class="slider"></span>
+      </label>
+      <a href="login.html" class="nav-btn">Login</a>
+      <a href="signup.html" class="nav-btn primary">Sign Up</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1>Empowering Safety with Guardian</h1>
+    <p>From real-time voice alerts to instant emergency support, Guardian is the digital shield you've always needed.</p>
+    <a href="signup.html" class="cta-btn">Start Your Safety Journey</a>
+  </header>
+
+  <!-- Timeline Scroll Flow -->
+  <section class="timeline">
+    <div class="timeline-block reveal">
+      <h2>🎙️ Voice Distress Detection</h2>
+      <p>Guardian listens passively for distress phrases like “help” or “no”—detecting danger before you even react.</p>
+    </div>
+    <div class="timeline-block reveal">
+      <h2>📍 Live Location Tracking</h2>
+      <p>Your live GPS location is shared with a trusted contact during emergency situations—automatically or manually triggered.</p>
+    </div>
+    <div class="timeline-block reveal">
+      <h2>⚠️ Instant SOS Alerts</h2>
+      <p>With a tap or distress phrase, Guardian sends an email alert to your emergency contact with your exact location and time.</p>
+    </div>
+    <div class="timeline-block reveal">
+      <h2>📝 Live Voice Transcript</h2>
+      <p>Everything you say is transcribed and stored securely. For evidence. For accountability. For you.</p>
+    </div>
+    <div class="timeline-block reveal">
+      <h2>📞 Emergency Resources</h2>
+      <p>Direct helpline buttons for women, police, ambulance, and mental health—instantly accessible in your moments of need.</p>
+    </div>
+    <div class="timeline-block reveal">
+      <h2>🤖 Smart Safety Assistant</h2>
+      <p>Ask questions like “How do I report harassment?” or “What’s the women’s helpline?”—Guardian’s assistant will guide you.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Guardian. Built with compassion, powered by technology. Stay safe, always.</p>
+  </footer>
+
+  <!-- Scroll reveal + Theme Toggle -->
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    window.addEventListener('scroll', () => {
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveals[i].getBoundingClientRect().top;
+        if (revealTop < windowHeight - 100) {
+          reveals[i].classList.add('active');
+        }
+      }
+    });
+
+    // Dark/light theme toggle
+    const toggle = document.getElementById('themeToggle');
+    toggle.addEventListener('change', () => {
+      document.documentElement.setAttribute('data-theme', toggle.checked ? 'light' : 'dark');
+    });
+  </script>
+
+</body>
+</html>

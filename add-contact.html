@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Emergency Contact - Guardian</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="add-contact.css" />
+</head>
+<body>
+  <div class="modal-container">
+    <div class="modal">
+      <h1>Add Emergency Contact</h1>
+      <form id="contactForm">
+        <div class="row">
+          <input type="text" id="contactName" placeholder="Full Name" required />
+          <input type="text" id="relation" placeholder="Relation" required />
+        </div>
+        <div class="row">
+          <input type="email" id="contactEmail" placeholder="Email Address" required />
+          <input type="tel" id="contactPhone" placeholder="Phone Number" required />
+        </div>
+        <button type="submit">Save Contact</button>
+      </form>
+      <p><a href="index.html">← Back to Guardian</a></p>
+    </div>
+  </div>
+
+  <!-- Supabase & JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="add-contact.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guardian - Your Life, Your Safety</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("5kZjN4nlSMi_PC5wN");
+    })();
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy7uMY_QqF9yJFH2KluOmrds12OyweS-M&callback=initMap" async defer></script>
+</head>
+
+<body class="dark-mode">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <button id="dashboard-toggle" aria-label="Open Dashboard">☰</button>
+    <button id="darkModeToggle" aria-label="Toggle Dark Mode">🌓</button>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboard" class="dashboard">
+    <button id="dashboard-close" class="close-btn" aria-label="Close Dashboard">✖</button>
+    <div class="dashboard-header">
+      <h2>👤 Logged in as</h2>
+      <p id="user-email">user@example.com</p>
+    </div>
+    <div class="dashboard-section">
+      <h3>📞 Emergency Contact</h3>
+      <p><strong>Name:</strong> <span id="contact-name">-</span></p>
+      <p><strong>Relation:</strong> <span id="contact-relation">-</span></p>
+      <p><strong>Email:</strong> <span id="contact-email">-</span></p>
+      <p><strong>Phone:</strong> <span id="contact-phone">-</span></p>
+    </div>
+    <div class="dashboard-footer">
+      <button id="logout-btn">🚪 Log Out</button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Guardian</h1>
+    <p class="subtitle">Your Life, Your Safety</p>
+
+    <div class="content-wrapper">
+      <div class="grid">
+        <!-- Card: Voice Distress Detection -->
+        <div class="card">
+          <div class="icon">🩺</div>
+          <h2>Real-time Distress Detection</h2>
+          <p>Activate voice-based detection for immediate help.</p>
+          <button class="btn" id="start-voice-btn">Start Voice Detection</button>
+        </div>
+
+        <!-- Card: SOS -->
+        <div class="card">
+          <div class="icon">⚠️</div>
+          <h2>SOS</h2>
+          <p>Trigger an emergency signal for immediate support.</p>
+          <button class="btn" id="sos-btn">SOS</button>
+        </div>
+
+        <!-- Card: Live Location -->
+        <div class="card">
+          <div class="icon">📍</div>
+          <h2>Live Location Tracker</h2>
+          <p>Your location updates in real-time.</p>
+          <div class="map" id="map"></div>
+        </div>
+
+        <!-- Card: Transcript -->
+        <div class="card">
+          <div class="icon">📝</div>
+          <h2>Live Voice Transcript</h2>
+          <p>Monitor what the assistant hears in real-time:</p>
+          <div class="transcript"><strong>Transcript:</strong> <span id="transcript-text">None yet</span></div>
+        </div>
+
+        <!-- Card: Emergency Resources -->
+        <div class="card">
+          <div class="icon">📞</div>
+          <h2>Emergency Resources</h2>
+          <ul class="resource-list">
+            <li>📞 Women Helpline: <strong>1091</strong></li>
+            <li>🚓 Police: <strong>100</strong></li>
+            <li>🚑 Ambulance: <strong>102</strong></li>
+            <li>🧠 Mental Health: <strong>9152987821</strong></li>
+          </ul>
+        </div>
+
+        <!-- Card: Assistant Q&A -->
+        <div class="card">
+          <div class="icon">🤖</div>
+          <h2>Assistant Q&A</h2>
+          <div class="assistant-container">
+            <input type="text" id="qa-input" placeholder="Ask a safety question..." class="assistant-input" />
+            <button class="btn" id="qa-submit">Ask</button>
+          </div>
+          <div class="assistant-response" id="qa-response"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+  
+</body>
+</html>
