@@ -52,8 +52,6 @@ const DISTRESS_KEYWORDS = ["help", "no", "stop", "don't", "save me", "danger", "
 if ("webkitSpeechRecognition" in window) {
   const recognition = new webkitSpeechRecognition();
   recognition.continuous = true;
-  recognition.lang = "en-US";
-
   recognition.onresult = async (event) => {
     const transcript = event.results[event.results.length - 1][0].transcript
       .trim()
